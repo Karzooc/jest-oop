@@ -1,5 +1,39 @@
 const assignments = [
   {
+    id: 0,
+    title: "📘 Final Exam 2025 | Comprehensive",
+    questions: [
+      { id:1, text:"A program in execution is called a/an _______?", options:["method","variable","operating system","process"], correct:3, translate:"البرنامج أثناء التنفيذ يُسمى _______؟", explain:"Process (العملية) هو البرنامج أثناء التنفيذ." },
+      { id:2, text:"Static fields are stored in the _______ section in memory while the program is running?", options:["increment","prompt","text","data"], correct:3, translate:"الحقول الثابتة (static) تُخزن في قسم _______ في الذاكرة أثناء تشغيل البرنامج؟", explain:"Data section تخزن المتغيرات الثابتة والعالمية." },
+      { id:3, text:"A _______ class member is accessible to all classes?", options:["public","private","protected","dynamic"], correct:0, translate:"عضو كلاس _______ يمكن الوصول إليه من جميع الكلاسات؟", explain:"public يسمح بالوصول من أي مكان." },
+      { id:4, text:"_______ fields serve as global variables that are always in memory while the program is running?", options:["local","int","Static","double"], correct:2, translate:"الحقول _______ تعمل كمتغيرات عامة تكون دائمًا في الذاكرة أثناء تشغيل البرنامج؟", explain:"Static fields تبقى في الذاكرة طوال عمر البرنامج." },
+      { id:5, text:"A _______ is a special method that is called when an object is created.", options:["class","constructor","variable","namespace"], correct:1, translate:"_______ هو دالة خاصة يتم استدعاؤها عند إنشاء كائن.", explain:"Constructor يتم استدعاؤه تلقائيًا عند إنشاء الكائن." },
+      { id:6, text:"In C#, you can call the garbage collector manually using the _______ method.", options:["GC.Collect()","GC.Garbage()","GC.Auto()","GC.Manual()"], correct:0, translate:"في C#، يمكنك استدعاء garbage collector يدويًا باستخدام الدالة _______", explain:"GC.Collect() تطلب تنظيف الذاكرة يدويًا." },
+      { id:7, text:"Create a method that takes unlimited arguments using the _______ modifier.", options:["params","in","open","arb"], correct:0, translate:"إنشاء دالة تأخذ عدد غير محدود من المعاملات باستخدام modifier _______", explain:"params يسمح بعدد متغير من المعاملات." },
+      { id:8, text:"An array of a reference-type holds a set of _______", options:["references","strings","characters","booleans"], correct:0, translate:"المصفوفة من نوع reference تحتوي على مجموعة من _______", explain:"المراجع (references) لعناوين الكائنات في Heap." },
+      { id:9, text:"_______ makes sure that 'sensitive' data is hidden within the class.", options:["Paging","parsing","Encapsulation","paraphrasing"], correct:2, translate:"_______ يضمن إخفاء البيانات الحساسة داخل الكلاس.", explain:"Encapsulation = تغليف البيانات وإخفائها." },
+      { id:10, text:"A property can be made write-only by providing only the _______ accessor?", options:["set","get","have","is"], correct:0, translate:"يمكن جعل property للكتابة فقط عن طريق توفير accessor _______ فقط؟", explain:"set فقط (أو get private)." },
+      { id:11, text:"Which of the following is a (binary) operator?", options:["/","++","--","?:"], correct:0, translate:"أي من التالي هو عامل (ثنائي)؟", explain:"/ (قسمة) يحتاج معاملين (binary). ++ و -- أحاديان." },
+      { id:12, text:"The conditional logical operators _______ cannot be overloaded directly.", options:["+","!=","*","&&"], correct:3, translate:"المؤثرات المنطقية الشرطية _______ لا يمكن عمل overloading لها مباشرة.", explain:"&& و || لا يمكن overloading مباشر." },
+      { id:13, text:"To inherit from a class, use the _______ symbol before the parent class name?", options:["+",":","§","%"], correct:1, translate:"للتوريث من كلاس، استخدم الرمز _______ قبل اسم الكلاس الأب؟", explain:"النقطتان (:) للتوريث في C#." },
+      { id:14, text:"Use the keyword _______ to call another constructor in the parent class.", options:["this","that","base","basic"], correct:2, translate:"استخدم keyword _______ لاستدعاء Constructor آخر في الكلاس الأب.", explain:"base لاستدعاء Constructor الكلاس الأب." },
+      { id:15, text:"The _______ access modifier allows access only in the same class or derived class.", options:["public","protected","private","insider"], correct:1, translate:"access modifier _______ يسمح بالوصول فقط في نفس الكلاس أو الكلاس المشتق.", explain:"protected" },
+      { id:16, text:"Class A inherits from B and implements interfaces X, Y, Z. Correct order?", options:["class A: X, B, Y, Z { }","class A: B, X, Y, Z { }","class A: X, Y, Z, B { }","class A: X, Y, B, Z { }"], correct:1, translate:"كلاس A يرث من B ويطبق X, Y, Z. الترتيب الصحيح؟", explain:"class A: BaseClass, Interfaces (القاعدة أولاً ثم الواجهات)." },
+      { id:17, text:"_______ is ability of different object types to provide unique interface for methods.", options:["publicity","Polymorphism","encapsulation","data definition"], correct:1, translate:"_______ هي قدرة أنواع مختلفة من الكائنات على توفير واجهة فريدة للدوال.", explain:"Polymorphism = تعدد الأشكال." },
+      { id:18, text:"All members of an interface are _______ by default.", options:["public","private","protected","internal"], correct:0, translate:"كل أعضاء الـ interface هم _______ افتراضيًا.", explain:"public (بدون تنفيذ)." },
+      { id:19, text:"A/An _______ type is a data type consisting of a set of named values?", options:["enum","class","struct","variable"], correct:0, translate:"نوع _______ هو نوع بيانات يتكون من مجموعة من القيم المسماة؟", explain:"enum (Enumeration)." },
+      { id:20, text:"The minimum number of parameters for a (struct) constructor is _______ parameter(s).", options:["zero","one","two at least","three at least"], correct:0, translate:"العدد الأدنى من المعاملات لـ Constructor الـ struct هو _______ معامل(ات).", explain:"Zero (struct constructor يمكن أن يكون بدون معاملات في C#)." },
+      { id:21, text:"A/An _______ is a type that represents references to methods with particular signature.", options:["delegate","char","hidden class","overloading"], correct:0, translate:"_______ هو نوع يمثل مراجع لدوال بتوقيع معين.", explain:"Delegate" },
+      { id:22, text:"A reference can be removed from a delegate using _______ operator.", options:["&&","&=","-=","+="], correct:2, translate:"يمكن إزالة مرجع من delegate باستخدام مؤثر _______", explain:"-=" },
+      { id:23, text:"Raising an event with no event handler (null) will result in a _______", options:["run-time exception","creating new delegate","creating new event","making new loop"], correct:0, translate:"استدعاء حدث ليس له معالج (null) سينتج _______", explain:"استثناء وقت التشغيل (NullReferenceException)." },
+      { id:24, text:"A _______ delegate holds more than one method reference at the same time.", options:["outcast","casting","multicast","multimedia"], correct:2, translate:"delegate _______ يحمل أكثر من مرجع دالة في نفس الوقت.", explain:"Multicast delegate" },
+      { id:25, text:"Which keyword prevents a class from being inherited?", options:["override","abstract","sealed","virtual"], correct:2, translate:"أي keyword يمنع الكلاس من أن يكون موروثًا؟", explain:"sealed" },
+      { id:26, text:"What is the purpose of the 'this' keyword in C#?", options:["Declares new class member","Refers to current instance","Defines static method","Specifies access modifiers"], correct:1, translate:"ما هو الغرض من keyword 'this' في C#؟", explain:"يشير إلى الكائن الحالي (current instance)." },
+      { id:27, text:"If a class has 1 static field and 2 instance fields, total fields when 5 objects are created?", options:["5","11","15","10"], correct:1, translate:"كلاس به 1 static و 2 instance، إجمالي الحقول عند إنشاء 5 كائنات؟", explain:"Static = 1 (مرة واحدة) + Instance (2 × 5 = 10) = 11" },
+      { id:28, text:"To define a class in C#, the keyword _______ is used.", options:["class","objects","struct","Define_Class"], correct:0, translate:"لتعريف كلاس في C#، يتم استخدام keyword _______", explain:"class" }
+    ]
+  },
+  {
     id: 1,
     title: "Chapter 1 | Classes & Objects",
     questions: [
