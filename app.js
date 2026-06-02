@@ -304,6 +304,44 @@ if (asmeeToggle) {
   asmeeToggle.onclick = () => setRevealAll(!revealAllMode);
 }
 
+const floatingIntro = document.getElementById("floatingIntro");
+const floatingStartBtn = document.getElementById("floatingStartBtn");
+const studyTopBtn = document.getElementById("studyTopBtn");
+const INTRO_SEEN_KEY = "oopIntroSeenOnce";
+
+function openStudyTopButton() {
+  if (studyTopBtn) {
+    studyTopBtn.classList.add("visible");
+  }
+}
+
+function closeFloatingIntro() {
+  if (floatingIntro) {
+    floatingIntro.classList.add("hidden");
+  }
+  localStorage.setItem(INTRO_SEEN_KEY, "1");
+  openStudyTopButton();
+}
+
+if (localStorage.getItem(INTRO_SEEN_KEY) === "1") {
+  if (floatingIntro) floatingIntro.classList.add("hidden");
+  openStudyTopButton();
+}
+
+if (floatingStartBtn) {
+  floatingStartBtn.onclick = () => {
+    closeFloatingIntro();
+    if (!assignments.length) return;
+    const firstSection = document.getElementById(`a${assignments[0].id}`);
+    if (firstSection) {
+      firstSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      nav.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+      const firstNavBtn = nav.querySelector("button");
+      if (firstNavBtn) firstNavBtn.classList.add("active");
+    }
+  };
+}
+
 // Close modal
 document.getElementById("closeModal").onclick = ()=>{
   document.getElementById("explainModal").style.display = "none";
