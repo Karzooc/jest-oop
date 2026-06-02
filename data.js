@@ -160,45 +160,667 @@ const assignments = [
     id: 6,
     title: "Chapter 6 | Operator Overloading",
     questions: [
-      { id:1, text:"Placeholder: Add Operator Overloading questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة Operator Overloading هنا", explain:"يتم إضافة الأسئلة لاحقًا" },
-      { id:2, text:"Placeholder: Add Operator Overloading questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة Operator Overloading هنا", explain:"يتم إضافة الأسئلة لاحقًا" },
-      { id:3, text:"Placeholder: Add Operator Overloading questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة Operator Overloading هنا", explain:"يتم إضافة الأسئلة لاحقًا" }
+      {
+        id: 1,
+        text: "What is Operator Overloading?",
+        options: [
+          "Creating multiple classes",
+          "Redefining the behavior of operators for user-defined types",
+          "Creating multiple constructors",
+          "Using operators with primitive types only"
+        ],
+        correct: 1,
+        translate: "ما هو التحميل الزائد للعوامل (Operator Overloading)؟",
+        explain: "التحميل الزائد للعوامل يعني إعادة تعريف سلوك المؤثرات (مثل + أو -) لتعمل مع الأنواع التي يحددها المستخدم (الكلاسات والستركت)."
+      },
+      {
+        id: 2,
+        text: "Which keyword is used to overload an operator?",
+        options: ["overload", "override", "operator", "redefine"],
+        correct: 2,
+        translate: "أي الكلمات المفتاحية تُستخدم لعمل overload لمؤثر؟",
+        explain: "تُستخدم الكلمة المفتاحية 'operator' متبوعة بالرمز المراد تحميله زائدًا لتحديد دالة المؤثر."
+      },
+      {
+        id: 3,
+        text: "An overloaded operator method must be:",
+        options: ["virtual", "abstract", "protected", "static"],
+        correct: 3,
+        translate: "يجب أن تكون دالة المؤثر المحمل زائدًا:",
+        explain: "في لغة C#، يجب أن تكون جميع دوال الـ Operator Overloading معرفة كـ public static دائمًا."
+      },
+      {
+        id: 4,
+        text: "Which operator is unary?",
+        options: ["+", "*", ">", "/"],
+        correct: 0,
+        translate: "أي من العوامل التالية يُعد أحاديًا (Unary)؟",
+        explain: "المؤثر '+' يمكن استخدامه كمؤثر أحادي (مثل +x) لتحديد الإشارة، بينما البقية ثنائية دائمًا."
+      },
+      {
+        id: 5,
+        text: "A unary operator receives:",
+        options: ["1 parameter", "2 parameters", "3 parameters", "0 parameters"],
+        correct: 0,
+        translate: "يستقبل المؤثر الأحادي (Unary Operator):",
+        explain: "المؤثر الأحادي يتعامل مع معامل واحد فقط، وبالتالي تستقبل الدالة معاملًا واحدًا."
+      },
+      {
+        id: 6,
+        text: "Which of the following is a comparison operator?",
+        options: ["++", "==", "--", "&&"],
+        correct: 1,
+        translate: "أي مما يلي يُعد مؤثر مقارنة؟",
+        explain: "المؤثر '==' (يساوي) يُستخدم للمقارنة بين قيمتين وإرجاع قيمة منطقية (bool)."
+      },
+      {
+        id: 7,
+        text: "Which operator cannot be overloaded?",
+        options: ["/", "=", "*", "+"],
+        correct: 1,
+        translate: "أي من المؤثرات التالية لا يمكن عمل overload له؟",
+        explain: "مؤثر التخصيص '=' (Assignment operator) لا يمكن عمل تحميل زائد له مباشرة في C#."
+      },
+      {
+        id: 8,
+        text: "Which operator cannot be overloaded directly?",
+        options: ["++", "&&", "==", "/"],
+        correct: 1,
+        translate: "أي من المؤثرات التالية لا يمكن تحميله زائدًا بشكل مباشر؟",
+        explain: "المؤثرات المنطقية الشرطية مثل '&&' و '||' لا تُحمل مباشرة، بل يتم تقييمها تلقائيًا عند تحميل '&' و '|' مع مؤثرات الحقيقة."
+      },
+      {
+        id: 9,
+        text: "Which pair must be overloaded together?",
+        options: ["+ and -", "* and /", "> and <", "++ and --"],
+        correct: 2,
+        translate: "أي من الأزواج التالية يجب تحميلهما زائدًا معًا؟",
+        explain: "مؤثرات المقارنة وعلاقات الحجم مثل '<' و '>' يجب تحميلهما في أزواج متكاملة."
+      },
+      {
+        id: 10,
+        text: "Which pair must also be overloaded together?",
+        options: ["== and !=", "+ and *", "> and ==", "++ and +"],
+        correct: 0,
+        translate: "أي من الأزواج التالية يجب أيضًا تحميلهما زائدًا معًا؟",
+        explain: "المؤثر '==' والمؤثر '!=' متلازمان؛ إذا قمت بتحميل أحدهما، فيجب عليك تحميل الآخر."
+      },
+      {
+        id: 11,
+        text: "public Battery operator +(Battery b1, Battery b2) -> Is this code Correct?",
+        options: ["True", "False"],
+        correct: 1,
+        translate: "هل هذا الكود صحيح؟",
+        explain: "خطأ؛ الدالة تفتقد للكلمات المفتاحية الإلزامية 'public static'."
+      },
+      {
+        id: 12,
+        text: "Operator can have zero or more parameters.",
+        options: ["True", "False"],
+        correct: 1,
+        translate: "يمكن للمؤثر المحمل زائدًا أن يمتلك صفر أو أكثر من المعاملات.",
+        explain: "خطأ؛ يجب أن يمتلك المؤثر إما معاملًا واحدًا (أحادي) أو معاملين (ثنائي)."
+      },
+      {
+        id: 13,
+        text: "The Overloaded operator cannot have a return type and a parameter list.",
+        options: ["True", "False"],
+        correct: 1,
+        translate: "المؤثر المحمل زائدًا لا يمكن أن يمتلك نوع إرجاع وقائمة معاملات.",
+        explain: "خطأ؛ المؤثر المحمل زائدًا يجب أن يمتلك نوع إرجاع وقائمة معاملات محددة."
+      },
+      {
+        id: 14,
+        text: "Conditional operators > or < could exist in a single format like + and -.",
+        options: ["True", "False"],
+        correct: 1,
+        translate: "يمكن لمؤثرات الشروط مثل > أو < أن توجد بشكل منفرد مثل + و -.",
+        explain: "خطأ؛ المؤثرات الشرطية وعلاقات التباين يجب أن تُعرف دائمًا كأزواج متلازمة ولا تتوفر بشكل منفرد."
+      },
+      {
+        id: 15,
+        text: "?: , -> , new , is , sizeof , typeof -> all of them could be overloaded.",
+        options: ["True", "False"],
+        correct: 1,
+        translate: "كل من ?: و -> و new و is و sizeof و typeof يمكن تحميلهم زائدًا.",
+        explain: "خطأ؛ هذه المؤثرات خاصة ومحجوزة للنظام ولا يمكن عمل تحميل زائد (Overloading) لأي منها."
+      },
+      {
+        id: 16,
+        text: "+, -, *, /, %= -> all of them could be overloaded.",
+        options: ["True", "False"],
+        correct: 1,
+        translate: "كل من +، -، *، /، %= يمكن تحميلهم زائدًا.",
+        explain: "خطأ؛ المؤثرات الحسابية الأساسية (+, -, *, /) يمكن تحميلها، بينما مؤثرات التخصيص المركبة مثل '%=' لا يمكن تحميلها مباشرة بل تعتمد على تحميل المؤثر الأساسي."
+      },
+      {
+        id: 17,
+        text: "The return type of a comparison operator (like ==) must be:",
+        options: ["int", "void", "bool", "any type"],
+        correct: 2,
+        translate: "نوع الإرجاع لمؤثرات المقارنة (مثل ==) يجب أن يكون:",
+        explain: "مؤثرات المقارنة تُرجع دائمًا قيمة منطقية (bool) تعبر عن الصحة (true) أو الخطأ (false)."
+      }
     ]
   },
   {
     id: 7,
     title: "Chapter 7 | Inheritance",
     questions: [
-      { id:1, text:"Placeholder: Add Inheritance questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة Inheritance هنا", explain:"يتم إضافة الأسئلة لاحقًا" },
-      { id:2, text:"Placeholder: Add Inheritance questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة Inheritance هنا", explain:"يتم إضافة الأسئلة لاحقًا" },
-      { id:3, text:"Placeholder: Add Inheritance questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة Inheritance هنا", explain:"يتم إضافة الأسئلة لاحقًا" }
+      {
+        id: 1,
+        text: "The class being inherited from is called:",
+        options: ["Child Class", "Derived Class", "Parent/Base Class", "Abstract Class"],
+        correct: 2,
+        translate: "الكلاس الذي يتم الوراثة منه يُسمى:",
+        explain: "الكلاس الأساسي الذي يوفر الأعضاء للكلاسات الأخرى يُسمى الكلاس الأب (Parent Class) أو الأساسي (Base Class)."
+      },
+      {
+        id: 2,
+        text: "The class that inherits from another class is called:",
+        options: ["Parent Class", "Base Class", "Derived Class", "Sealed Class"],
+        correct: 2,
+        translate: "الكلاس الذي يرث من كلاس آخر يُسمى:",
+        explain: "الكلاس الذي يستقبل الخصائص والدوال يُسمى الكلاس المشتق (Derived Class) أو الابن (Child Class)."
+      },
+      {
+        id: 3,
+        text: "Which symbol is used for inheritance in C#?",
+        options: [".", "+", ":", "->"],
+        correct: 2,
+        translate: "أي الرموز التالية يُستخدم للوراثة في لغة C#؟",
+        explain: "تُستخدم النقطتان الرأسيتان (:) للإشارة إلى الوراثة وتطبيق الواجهات في C#."
+      },
+      {
+        id: 4,
+        text: "Given class Person { string name; int maxSpeed; } and class Player: Person { int maxForce; void Shoot() {} }. How many members are directly defined in Player?",
+        options: ["1", "2", "3", "5"],
+        correct: 1,
+        translate: "كم عدد الأعضاء المعرفين بشكل مباشر داخل الكلاس Player؟",
+        explain: "الأعضاء المعرفون مباشرة داخل Player هما المتغير maxForce والدالة Shoot فقط (عددهم 2)."
+      },
+      {
+        id: 5,
+        text: "Based on the previous code, how many total members does a Player object have?",
+        options: ["1", "2", "3", "5"],
+        correct: 3,
+        translate: "بناءً على الكود السابق، كم إجمالي عدد الأعضاء الذين يمتلكهم كائن من Player؟",
+        explain: "يمتلك 3 أعضاء موروثين من Person (الاسم، والسرعة، ودالة الجري المعرفة في الكلاس الأب) بالإضافة إلى العضوين الخاصين به، ليصبح المجموع 5."
+      },
+      {
+        id: 6,
+        text: "The main benefit of inheritance is:",
+        options: ["Faster execution", "Reduced memory usage", "Smaller objects", "Code reusability"],
+        correct: 3,
+        translate: "الفائدة الأساسية من الوراثة هي:",
+        explain: "إعادة استخدام الكود (Code reusability) وتجنب التكرار من خلال كتابة الكود المشترك في مكان واحد."
+      },
+      {
+        id: 7,
+        text: "An abstract class:",
+        options: ["Must contain abstract methods", "Cannot be inherited", "Cannot be instantiated", "Cannot contain fields"],
+        correct: 2,
+        translate: "الكلاس المجرد (Abstract Class):",
+        explain: "الكلاس المجرد مصمم ليكون قاعدة فقط للوراثة، ولا يمكن إنشاء كائن (Instance) منه بشكل مباشر باستخدام new."
+      },
+      {
+        id: 8,
+        text: "A sealed class:",
+        options: ["Must contain abstract methods", "Cannot be inherited", "Cannot be instantiated", "Cannot contain fields"],
+        correct: 1,
+        translate: "الكلاس المختوم (Sealed Class):",
+        explain: "الكلمة المفتاحية sealed تمنع الكلاسات الأخرى من الوراثة منه."
+      },
+      {
+        id: 9,
+        text: "When a child object is created:",
+        options: ["Child constructor executes first", "Parent constructor executes first", "Both execute simultaneously", "Random order"],
+        correct: 1,
+        translate: "عند إنشاء كائن من الكلاس الابن:",
+        explain: "يتم استدعاء وتنفيذ مشيد الكلاس الأب (Parent Constructor) أولاً لتهيئة الجزء الموروث، ثم ينفذ مشيد الابن."
+      },
+      {
+        id: 10,
+        text: "Parent object exists before child object is created.",
+        options: ["True", "False"],
+        correct: 1,
+        translate: "كائن الأب يكون موجودًا ومستقلاً قبل إنشاء كائن الابن.",
+        explain: "خطأ؛ لا يتم إنشاء كائن منفصل للأب، بل يتم تهيئة ميزات الأب داخل بنية كائن الابن نفسه أثناء إنشائه."
+      },
+      {
+        id: 11,
+        text: "_______ keyword calls a constructor in the same class, _______ keyword calls a constructor in the parent class.",
+        options: ["this, base", "base, this", "same, parent", "self, base"],
+        correct: 0,
+        translate: "الكلمة المفتاحية ___ تستدعي مشيدًا في نفس الكلاس، والكلمة ___ تستدعي مشيدًا في الكلاس الأب.",
+        explain: "نستخدم 'this' للربط بين مشيدات نفس الكلاس، ونستخدم 'base' لتوجيه الاستدعاء لمشيد الكلاس الأب."
+      },
+      {
+        id: 12,
+        text: "class A { public int x; } class B: A { public int y; } class C: B { public int z; } How many members does B have in total?",
+        options: ["1", "2", "3", "0"],
+        correct: 1,
+        translate: "كم عدد الأعضاء الإجمالي المتوفرة في الكلاس B؟",
+        explain: "يحتوي الكلاس B على المتغير الخاص به 'y' بالإضافة إلى المتغير الموروث 'x' من الكلاس A، ليصبح المجموع 2."
+      }
     ]
   },
   {
     id: 8,
     title: "Chapter 8 | Polymorphism & Interfaces",
     questions: [
-      { id:1, text:"Placeholder: Add Polymorphism & Interfaces questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة Polymorphism & Interfaces هنا", explain:"يتم إضافة الأسئلة لاحقًا" },
-      { id:2, text:"Placeholder: Add Polymorphism & Interfaces questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة Polymorphism & Interfaces هنا", explain:"يتم إضافة الأسئلة لاحقًا" },
-      { id:3, text:"Placeholder: Add Polymorphism & Interfaces questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة Polymorphism & Interfaces هنا", explain:"يتم إضافة الأسئلة لاحقًا" }
+      {
+        id: 1,
+        text: "Polymorphism allows a child class to:",
+        options: ["Inherit fields only", "Introduce a different implementation of an inherited method", "Create constructors automatically", "Prevent method access"],
+        correct: 1,
+        translate: "تعدد الأشكال (Polymorphism) يسمح للكلاس الابن بـ:",
+        explain: "تعديل سلوك الدالة الموروثة وتقديم تنفيذ مخصص وجديد يتناسب مع طبيعة الابن."
+      },
+      {
+        id: 2,
+        text: "Which keyword makes a method polymorphic (can be overridden)?",
+        options: ["override", "virtual", "static", "sealed"],
+        correct: 1,
+        translate: "أي الكلمات المفتاحية تجعل الدالة قابلة لإعادة الكتابة وتدعم تعدد الأشكال؟",
+        explain: "الكلمة المفتاحية 'virtual' في الكلاس الأب تعطي الإذن للكلاسات الابنة بتعديل الدالة."
+      },
+      {
+        id: 3,
+        text: "Which keyword is used in the child class to override a polymorphic method?",
+        options: ["override", "virtual", "static", "sealed"],
+        correct: 0,
+        translate: "أي الكلمات المفتاحية تُستخدم في الكلاس الابن لإعادة كتابة الدالة؟",
+        explain: "تُستخدم الكلمة المفتاحية 'override' لإيضاح أننا نعيد كتابة دالة افتراضية موروثة."
+      },
+      {
+        id: 4,
+        text: "A method declared as virtual:",
+        options: ["Must be private", "Cannot be inherited", "Can be overridden in child classes", "Must be abstract"],
+        correct: 2,
+        translate: "الدالة المعرفة كـ virtual:",
+        explain: "تحتوي على تنفيذ افتراضي في الكلاس الأساسي ويمكن للكلاسات المشتقة استبدال هذا التنفيذ أو الإبقاء عليه."
+      },
+      {
+        id: 5,
+        text: "For polymorphism to work correctly:",
+        options: ["Parent method must be virtual", "Child method must be override", "Both of them", "Any one of them"],
+        correct: 2,
+        translate: "لكي يعمل تعدد الأشكال الديناميكي بشكل صحيح:",
+        explain: "يجب أن تكون دالة الأب 'virtual' (أو abstract) ودالة الابن تستخدم الكلمة المفتاحية 'override'."
+      },
+      {
+        id: 6,
+        text: "An interface is:",
+        options: ["A class", "A constructor", "A method", "A blueprint of a class"],
+        correct: 3,
+        translate: "الواجهة (Interface) هي:",
+        explain: "الواجهة بمثابة عقد أو مخطط للكلاس (Blueprint of a class) يحدد الدوال والخصائص التي يجب الالتزام بتنفيذها."
+      },
+      {
+        id: 7,
+        text: "Can an interface be instantiated directly?",
+        options: ["True", "False"],
+        correct: 1,
+        translate: "هل يمكن إنشاء كائن (Instance) مباشر من الـ interface؟",
+        explain: "لا يمكن إنشاء كائن من الواجهة بشكل مباشر لأنها لا تحتوي على تنفيذ كامل للأعضاء."
+      },
+      {
+        id: 8,
+        text: "Interface members (traditionally):",
+        options: ["Must have implementation", "Cannot have implementation", "Must be private", "Must be static"],
+        correct: 1,
+        translate: "أعضاء الـ Interface في وضعها الافتراضي التقليدي:",
+        explain: "توضع كمجرد توقيع (Declaration) بدون أي كود تنفيذي داخل الواجهة."
+      },
+      {
+        id: 9,
+        text: "Interface members are by default:",
+        options: ["Private", "Protected", "Public", "Internal"],
+        correct: 2,
+        translate: "تكون صلاحيات الوصول لأعضاء الواجهة افتراضيًا:",
+        explain: "جميع أعضاء الواجهات تكون 'public' بشكل تلقائي لتتمكن الكلاسات من رؤيتها وتطبيقها."
+      },
+      {
+        id: 10,
+        text: "Does C# support multiple inheritance between classes?",
+        options: ["True", "False"],
+        correct: 1,
+        translate: "هل تدعم لغة C# الوراثة المتعددة بين الكلاسات؟",
+        explain: "لا تدعم C# الوراثة من أكثر من كلاس أب واحد لمنع التعارض والمشاكل البنيوية."
+      },
+      {
+        id: 11,
+        text: "A class may:",
+        options: ["Inherit from multiple classes", "Implement multiple interfaces", "Implement only one interface", "Inherit from 2 classes only"],
+        correct: 1,
+        translate: "الكلاس يمكنه أن:",
+        explain: "يمكن للكلاس تطبيق عدد غير محدود من الواجهات (Multiple interfaces) لتعويض غياب الوراثة المتعددة."
+      },
+      {
+        id: 12,
+        text: "Multiple inheritance between classes is a feature of some OOP languages.",
+        options: ["True", "False"],
+        correct: 0,
+        translate: "الوراثة المتعددة بين الكلاسات هي ميزة مدعومة في بعض لغات OOP الأخرى.",
+        explain: "نعم، هناك لغات تدعم الوراثة المتعددة بين الكلاسات مثل لغة C++."
+      },
+      {
+        id: 13,
+        text: "Where must the inherited base class exist if the class inherits from a class and multiple interfaces?",
+        options: ["at First", "at End", "Any place", "at bin"],
+        correct: 0,
+        translate: "أين يجب كتابة اسم كلاس الأب الموروث إذا كان الكلاس يرث كلاس وواجهات متعددة؟",
+        explain: "يجب كتابة اسم كلاس الأب أولاً مباشرة بعد علامة (:)، ثم تتبعها أسماء الواجهات المفصولة بفاصلة."
+      },
+      {
+        id: 14,
+        text: "The method defined within an interface should be without implementation nor an access modifier.",
+        options: ["True", "False"],
+        correct: 0,
+        translate: "الدالة المعرفة داخل الـ interface تكتب بدون أقواس التنفيذ وبدون تحديد access modifier.",
+        explain: "صحيح؛ لا نضع صلاحيات وصول لأنها public تلقائيًا، ولا نضع كودًا تنفيذيًا بل تنتهي بفاصلة منقوطة."
+      },
+      {
+        id: 15,
+        text: "Polymorphism allows different objects from the same inheritance hierarchy to have ______ implementations.",
+        options: ["multiple", "same", "single", "no"],
+        correct: 0,
+        translate: "تعدد الأشكال يسمح لكائنات مختلفة تتبع نفس شجرة الوراثة بامتلاك تنفيذات ___.",
+        explain: "يسمح بامتلاك تنفيذات متعددة ومختلفة لنفس اسم الدالة بناءً على نوع الكائن الفعلي."
+      },
+      {
+        id: 16,
+        text: "Given: Animal a = new Cat(); (where Speak() is virtual in Animal but defined without override keyword in Cat). What does a.Speak() print?",
+        options: ["Animal speaks", "Meow Meow", "Null", "Error"],
+        correct: 0,
+        translate: "ماذا يطبع استدعاء a.Speak() في هذه الحالة؟",
+        explain: "بما أن كلاس Cat لم يستخدم الكلمة المفتاحية 'override'، فإن الدالة لم ترتبط برابط ديناميكي، وسيتم استدعاء دالة المؤشر (Animal)."
+      },
+      {
+        id: 17,
+        text: "Given: Animal a = new Cat(); (where Speak() is virtual in Animal and overridden in Cat). What does a.Speak() print?",
+        options: ["Animal speaks", "Meow Meow", "Null", "Error"],
+        correct: 1,
+        translate: "ماذا يطبع استدعاء a.Speak() عند وجود الكلمة override؟",
+        explain: "عند استخدام 'override'، يعمل تعدد الأشكال بشكل سليم ويتم التوجه لتنفيذ الدالة الخاصة بالكائن الفعلي وهو القطة (Meow Meow)."
+      }
     ]
   },
   {
     id: 9,
-    title: "Chapters 9–10 | UML, Enums, Structs",
+    title: "Chapter 9 | UML Modeling & Relationships",
     questions: [
-      { id:1, text:"Placeholder: Add UML, Enums, Structs questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة UML, Enums, Structs هنا", explain:"يتم إضافة الأسئلة لاحقًا" },
-      { id:2, text:"Placeholder: Add UML, Enums, Structs questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة UML, Enums, Structs هنا", explain:"يتم إضافة الأسئلة لاحقًا" },
-      { id:3, text:"Placeholder: Add UML, Enums, Structs questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة UML, Enums, Structs هنا", explain:"يتم إضافة الأسئلة لاحقًا" }
+      {
+        id: 1,
+        text: "UML stands for:",
+        options: ["Universal Machine Language", "Unified Modeling Language", "Unified Machine Logic", "User Modeling Language"],
+        correct: 1,
+        translate: "إلى ماذا يرمز الاختصار UML؟",
+        explain: "يرمز إلى لغة النمذجة الموحدة (Unified Modeling Language) المُستخدمة لتصميم وتوثيق برمجيات OOP."
+      },
+      {
+        id: 2,
+        text: "Which of the following is NOT part of a standard UML class box?",
+        options: ["Class name", "Attributes", "Methods", "Constructor body"],
+        correct: 3,
+        translate: "أي مما يلي لا يُعتبر جزءًا رئيسيًا من صندوق الكلاس في مخطط UML؟",
+        explain: "مربع الكلاس يحتوي على ثلاثة أقسام: الاسم، والسمات، والدوال. لا يتم كتابة تفاصيل أو متن المشيد (Constructor body) داخله."
+      },
+      {
+        id: 3,
+        text: "In UML, which symbol represents a private member?",
+        options: ["+", "-", "/", "#"],
+        correct: 1,
+        translate: "في مخطط UML، أي رمز يمثل العضو الخاص (private)؟",
+        explain: "تُستخدم علامة الناقص '-' للدلالة على أن العضو خاص (private)."
+      },
+      {
+        id: 4,
+        text: "In UML, which symbol represents a protected member?",
+        options: ["+", "-", "/", "#"],
+        correct: 3,
+        translate: "في مخطط UML، أي رمز يمثل العضو المحمي (protected)؟",
+        explain: "تُستخدم علامة الهاشتاج '#' للدلالة على أن العضو محمي (protected)."
+      },
+      {
+        id: 5,
+        text: "Association represents:",
+        options: ["is-a relationship", "whole-part relationship", "Objects interacting with each other", "inheritance only"],
+        correct: 2,
+        translate: "علاقة الارتباط (Association) تمثل:",
+        explain: "تمثل علاقة عامة تعبر عن تفاعل الكائنات مع بعضها البعض واستخدام ميزاتها (مفهوم التشارك)."
+      },
+      {
+        id: 6,
+        text: "Multiplicity describes:",
+        options: ["Object size", "Number of related objects", "Method visibility", "Memory usage"],
+        correct: 1,
+        translate: "تعددية العلاقات (Multiplicity) تصف:",
+        explain: "تحدد عدد الكائنات التي يمكن أن تشترك وترتبط ببعضها في العلاقة البرمجية (مثل 1 إلى كثير)."
+      },
+      {
+        id: 7,
+        text: "Which multiplicity means 'zero or more' in UML?",
+        options: ["0..*", "1..*", "0..1", "1"],
+        correct: 0,
+        translate: "أي قيم التعددية التالية تعني 'صفر أو أكثر'؟",
+        explain: "الرمز '0..*' أو النجمة '*' بمفردها تعني إمكانية الارتباط بـ صفر أو عدد غير محدود من الكائنات."
+      },
+      {
+        id: 8,
+        text: "Aggregation represents:",
+        options: ["Strong ownership", "Interface implementation", "Whole-part relationship (Weak)", "Inheritance"],
+        correct: 2,
+        translate: "علاقة التجميع (Aggregation) تمثل:",
+        explain: "تمثل علاقة 'الكل والجزء' (Whole-part) ولكنها علاقة ضعيفة حيث لا يملك الكل تحكمًا كاملاً في عمر الأجزاء."
+      },
+      {
+        id: 9,
+        text: "In aggregation, the contained objects:",
+        options: ["Depend completely on the whole", "Cannot exist independently", "Can exist independently", "Must inherit from the container"],
+        correct: 2,
+        translate: "في علاقة التجميع (Aggregation)، الكائنات المحتواة بالداخل:",
+        explain: "تستطيع الكائنات الداخلية العيش والاستمرار في النظام حتى لو تم تدمير وحذف الكلاس الحاوي لها."
+      },
+      {
+        id: 10,
+        text: "Which UML symbol represents aggregation?",
+        options: ["Filled diamond", "Open diamond", "Hollow triangle", "Dashed arrow"],
+        correct: 1,
+        translate: "أي الرموز التالية يمثل علاقة التجميع (Aggregation) في UML؟",
+        explain: "تُمثل بمعين فارغ/مفتوح (Open diamond) يتصل بجهة الكلاس الحاوي للكل."
+      },
+      {
+        id: 11,
+        text: "Composition represents:",
+        options: ["Weak relationship", "Simple interaction", "Strong whole-part relationship", "Interface realization"],
+        correct: 2,
+        translate: "علاقة التكوين (Composition) تمثل:",
+        explain: "علاقة 'كل وجزء' قوية جدًا (Strong ownership) يكون فيها الجزء تابعًا كليًا للكل."
+      },
+      {
+        id: 12,
+        text: "In composition, if the whole object is destroyed:",
+        options: ["Parts remain independent", "Parts are also destroyed", "Nothing happens", "Parts become interfaces"],
+        correct: 1,
+        translate: "في علاقة التكوين، إذا تم تدمير الكائن الأساسي (الكل):",
+        explain: "بما أنها علاقة تلازمية قوية، فإن تدمير الكل يؤدي تلقائيًا إلى تدمير وحذف جميع الأجزاء التابعة له من الذاكرة."
+      },
+      {
+        id: 13,
+        text: "Which UML symbol represents composition?",
+        options: ["Hollow triangle", "Dashed line", "Open diamond", "Filled diamond"],
+        correct: 3,
+        translate: "أي الرموز التالية يمثل علاقة التكوين (Composition) في UML؟",
+        explain: "تُمثل بمعين ممتلئ/مظلل (Filled diamond) يتصل بجهة الكلاس الأساسي."
+      },
+      {
+        id: 14,
+        text: "Inheritance represents:",
+        options: ["has-a relationship", "owns-a relationship", "is-a relationship", "interacts-with relationship"],
+        correct: 2,
+        translate: "الوراثة (Inheritance) تمثل علاقة من نوع:",
+        explain: "الوراثة تعبر دائمًا عن علاقة 'هو عبارة عن' (is-a)، مثل: السيارة هي مركبة."
+      }
     ]
   },
   {
     id: 10,
-    title: "Chapters 11–14 | Delegates, Events, Files, Exceptions, GUI",
+    title: "Chapter 10 | Enums & Structures",
     questions: [
-      { id:1, text:"Placeholder: Add Delegates, Events, Files, Exceptions, GUI questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة آخر 4 فصول هنا", explain:"يتم إضافة الأسئلة لاحقًا" },
-      { id:2, text:"Placeholder: Add Delegates, Events, Files, Exceptions, GUI questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة آخر 4 فصول هنا", explain:"يتم إضافة الأسئلة لاحقًا" },
-      { id:3, text:"Placeholder: Add Delegates, Events, Files, Exceptions, GUI questions here", options:["A","B","C","D"], correct:0, translate:"أضف أسئلة آخر 4 فصول هنا", explain:"يتم إضافة الأسئلة لاحقًا" }
+      {
+        id: 1,
+        text: "An enumeration type in C# is defined using the keyword:",
+        options: ["class", "struct", "enum", "object"],
+        correct: 2,
+        translate: "يتم تعريف نوع التعداد في لغة C# باستخدام الكلمة المفتاحية:",
+        explain: "تُستخدم الكلمة المفتاحية 'enum' لإنشاء مجموعة من الثوابت الرقمية ذات الأسماء الواضحة."
+      },
+      {
+        id: 2,
+        text: "The named values inside an enum are called:",
+        options: ["variables", "identifiers", "enumerators", "constants"],
+        correct: 2,
+        translate: "تُسمى القيم والمسميات المعرفة داخل الـ enum بـ:",
+        explain: "القيم النصية المدرجة داخل التعداد تُسمى برمجياً بالمُعدِّدات (enumerators)."
+      },
+      {
+        id: 3,
+        text: "Is this code correct? -> Color c = Red;",
+        options: ["True", "False"],
+        correct: 1,
+        translate: "هل كتابة هذا السطر صحيحة مباشرة؟",
+        explain: "خطأ؛ للوصول لقيمة التعداد يجب تحديد اسم الـ enum أولاً، مثل: Color.Red."
+      },
+      {
+        id: 4,
+        text: "A structure in C# is defined using the keyword:",
+        options: ["enum", "class", "define", "struct"],
+        correct: 3,
+        translate: "يتم تعريف البنية (Structure) باستخدام الكلمة المفتاحية:",
+        explain: "تُستخدم الكلمة المفتاحية 'struct' لإنشاء أنواع بيانات مخصصة خفيفة الوزن."
+      },
+      {
+        id: 5,
+        text: "Structures are considered:",
+        options: ["reference types", "value types", "abstract types", "pointer types"],
+        correct: 1,
+        translate: "تُعتبر الـ Structures في الذاكرة من أنواع:",
+        explain: "الستركت (struct) هو نوع قيمة (Value type) يُخزن بشكل مباشر في المكان المعرف فيه وليس مرجعًا."
+      },
+      {
+        id: 6,
+        text: "Which of the following can a structure contain?",
+        options: ["Fields only", "Methods only", "Data and related functionality", "Destructors only"],
+        correct: 2,
+        translate: "أي مما يلي يمكن للـ structure احتوائه؟",
+        explain: "الستركت كائن متكامل يمكنه احتواء بيانات (Fields) ووظائف برمجية (Methods, Properties)."
+      },
+      {
+        id: 7,
+        text: "Point p1 = new Point(5, 12); Point p2 = p1; p2.X = 70; If Point is a struct, what is the value of p1.X?",
+        options: ["5", "70", "12", "0"],
+        correct: 0,
+        translate: "إذا كانت Point عبارة عن struct، فما هي قيمة p1.X بعد التعديل؟",
+        explain: "بما أنه Value type، فعند نسخ p1 إلى p2 يتم إنشاء نسخة مستقلة تماماً؛ لذا تعديل p2 لا يؤثر مطلقاً على قيمة p1.X وتظل 5."
+      },
+      {
+        id: 8,
+        text: "What happens during the assignment of two struct variables (p2 = p1)?",
+        options: ["Reference is copied", "Address is copied", "Entire structure instance is copied", "Nothing is copied"],
+        correct: 2,
+        translate: "ماذا يحدث عند مساواة متغيرين من نوع struct؟",
+        explain: "يتم نسخ كامل محتويات البنية وقيم الحقول بالكامل (Deep copy) إلى المتغير الجديد."
+      },
+      {
+        id: 9,
+        text: "A class-type variable stores:",
+        options: ["The entire object itself", "Only integer values", "A reference to an object", "Enumerators"],
+        correct: 2,
+        translate: "يخزن المتغير الذي يتبع لكلاس (Class-type):",
+        explain: "متغيرات الكلاس هي Reference types، فهي تخزن فقط عنوان أو مرجع (Reference) يشير لمكان الكائن الفعلي بالـ Heap."
+      },
+      {
+        id: 10,
+        text: "A structure-type variable stores:",
+        options: ["Object reference only", "Structure instance itself", "Heap address only", "Method references"],
+        correct: 1,
+        translate: "يخزن المتغير الذي يتبع لبنية (Structure-type):",
+        explain: "يخزن قيمة ومحتويات الـ struct نفسها بشكل مباشر ومحلي في موقع تعريف المتغير."
+      },
+      {
+        id: 11,
+        text: "Which memory area is primarily associated with structures (local variables)?",
+        options: ["Heap", "Stack", "Data", "Text"],
+        correct: 1,
+        translate: "أي مناطق الذاكرة ترتبط بها الـ structures كمتغيرات محلية؟",
+        explain: "المتغيرات المحلية من نوع سستركت تُخزن بالكامل داخل الـ Stack لسرعة تخصيصها وحذفها."
+      },
+      {
+        id: 12,
+        text: "Which of the following can contain a parameterized constructor?",
+        options: ["Structure only", "Class only", "Both", "Neither"],
+        correct: 2,
+        translate: "أي مما يلي يمكنه احتواء مشيد يحتوي على معاملات (Parameterized Constructor)؟",
+        explain: "كلاهما (الكلاس والستركت) يدعمان تماماً إنشاء مشيدات تحتوي على معاملات لتمرير القيم الأولية."
+      },
+      {
+        id: 13,
+        text: "Which of the following can contain a parameter-less constructor?",
+        options: ["Structure only", "Class only", "Both", "Neither"],
+        correct: 2,
+        translate: "أي مما يلي يمكنه احتواء مشيد بدون معاملات (Parameter-less Constructor)؟",
+        explain: "كلاهما؛ في النسخ الحديثة من C# يُسمح للـ struct أيضاً بامتلاك مشيد فارغ مخصص بدون معاملات."
+      },
+      {
+        id: 14,
+        text: "Structure cannot contain a destructor.",
+        options: ["True", "False"],
+        correct: 0,
+        translate: "الـ Structure لا يمكنها احتواء دالة هدم (Destructor).",
+        explain: "صحيح؛ الـ Destructors تُستخدم لإدارة وتنظيف الذاكرة العشوائية للكائنات في الـ Heap، والستركت لا يحتاج ذلك لأنه يدير نفسه في الـ Stack."
+      },
+      {
+        id: 15,
+        text: "Structures can inherit from another structure.",
+        options: ["True", "False"],
+        correct: 1,
+        translate: "يمكن لـ structure أن ترث من structure أخرى.",
+        explain: "خطأ؛ لا تدعم الـ structures الوراثة فيما بينها (تعتبر مختومة سياقياً)."
+      },
+      {
+        id: 16,
+        text: "All access modifiers (public, private, protected) are allowed inside a structure.",
+        options: ["True", "False"],
+        correct: 1,
+        translate: "جميع صلاحيات الوصول مسموحة تماماً داخل الـ structure.",
+        explain: "خطأ؛ الكلمة المفتاحية 'protected' غير مسموحة داخل الـ struct لأنها لا تدعم الوراثة من الأساس."
+      },
+      {
+        id: 17,
+        text: "Structures cannot contain:",
+        options: ["Methods", "Constructors", "Virtual or abstract methods", "Properties"],
+        correct: 2,
+        translate: "الـ Structures لا يمكنها أن تحتوي على:",
+        explain: "الدوال الافتراضية والمجردة (Virtual/Abstract) ممنوعة داخلها لعدم وجود وراثة لتعديلها."
+      },
+      {
+        id: 18,
+        text: "Two class-type variables may point to the exact same object.",
+        options: ["True", "False"],
+        correct: 0,
+        translate: "يمكن لمتغيرين من نوع كلاس الإشارة والوصول لنفس الكائن الفعلي.",
+        explain: "صحيح؛ لأن المتغيرات تخزن مراجع فقط، فمن الممكن أن يشير أكثر من مرجع لنفس عنوان الكائن في الـ Heap."
+      },
+      {
+        id: 19,
+        text: "Two value-type (struct) variables may have the same struct instance shared between them.",
+        options: ["True", "False"],
+        correct: 1,
+        translate: "يمكن لمتغيرين من نوع struct مشاركة نفس النسخة الحية بدلاً من نسخها.",
+        explain: "خطأ؛ الـ struct يُمثل قيمة مستقلة، عند إسناد متغير لآخر يتم نسخ البيانات ولا يتشاركان في نفس الكائن."
+      }
     ]
   }
 ];
